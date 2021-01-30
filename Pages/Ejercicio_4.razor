@@ -1,0 +1,45 @@
+@page "/Ejercicio-4"
+
+<h1 class="text-center">Ejercicio #4</h1>
+<div class="container">
+    <div class="row">
+        <p>Programa que acepte las medidas de los lados de un triangulo determine el tipo de triangulo según sus lados.</p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input class="form-control" type="number" @bind="Side_1" placeholder="Lado A" />
+        </div>
+        <div class="col">
+            <input class="form-control" type="number" @bind="Side_2" placeholder="Lado B" />
+        </div>
+        <div class="col">
+            <input class="form-control" type="number" @bind="Side_3" placeholder="Lado C" />
+        </div>
+        <div class="col">
+            <button class="btn btn-dark" @onclick="Decide">Saber el triángulo</button>
+        </div>
+    </div><br />
+    <div class="col justify-content-center">
+        <ul class="list-group">
+            <li class="list-group-item text-center">
+                <p><strong>Triángulo</strong> @Result</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@code {
+    public int? Side_1 {get; set;}
+    public int? Side_2 {get; set;}
+    public int? Side_3 {get; set;}
+    public string Result;
+
+    public void Decide() 
+    {
+        if (Side_1 == Side_2 && Side_1 == Side_3 && Side_2 == Side_3) { Result = "Equilátero"; }
+
+        else if (Side_1 == Side_2 || Side_1 == Side_3 || Side_2 == Side_3) { Result = "Isósceles"; }
+
+        else { Result = "Escaleno"; }
+    }
+}

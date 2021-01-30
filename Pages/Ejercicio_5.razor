@@ -1,0 +1,116 @@
+@page "/Ejercicio-5"
+
+<h1 class="text-center">Ejercicio #5</h1>
+<div class="container">
+    <div class="row">
+        <p>Programa que acepte un numero del 1 al 100000, mostrarlo en letras. Ejemplo 90 => noventa. (En español)</p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input class="form-control" placeholder="Introduzca un numero" type="number" @bind="numero" />
+        </div>
+        <div class="col">
+            <button class="btn btn-dark" @onclick="Convert">Convertir</button>
+        </div>
+    </div><br />
+    <div class="col justify-content-center">
+        <ul class="list-group">
+            <li class="list-group-item text-center">
+                <p>@numero => @value_string</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@code {
+    public double numero {get; set;}
+    public string value_string {get; set;}
+
+    public void Convert() { value_string = Numero_Letra(numero); }
+
+    public string NumeroALetras(double numberAsString)
+    {         
+        var entero = Math.Truncate(numberAsString);
+        var res = Numero_Letra(entero);
+        return res;
+    }
+
+    public string Numero_Letra(double value)
+    {
+        string num2Text; 
+        value = Math.Truncate(value);
+
+        if (value == 0) num2Text = "cero";
+        else if (value == 1) num2Text = "uno";
+        else if (value == 2) num2Text = "dos";
+        else if (value == 3) num2Text = "tres";
+        else if (value == 4) num2Text = "cuatro";
+        else if (value == 5) num2Text = "cinco";
+        else if (value == 6) num2Text = "seis";
+        else if (value == 7) num2Text = "siete";
+        else if (value == 8) num2Text = "ocho";
+        else if (value == 9) num2Text = "nueve";
+        else if (value == 10) num2Text = "diez";
+        else if (value == 11) num2Text = "once";
+        else if (value == 12) num2Text = "doce";
+        else if (value == 13) num2Text = "trece";
+        else if (value == 14) num2Text = "catorce";
+        else if (value == 15) num2Text = "quince";
+        else if (value < 20) num2Text = "dieci" + NumeroALetras(value - 10);
+        else if (value == 20) num2Text = "veinte";
+        else if (value < 30) num2Text = "veinti" + NumeroALetras(value - 20);
+        else if (value == 30) num2Text = "treinta";
+        else if (value == 40) num2Text = "cuarenta";
+        else if (value == 50) num2Text = "cicuenta";
+        else if (value == 60) num2Text = "sesenta";
+        else if (value == 70) num2Text = "setenta";
+        else if (value == 80) num2Text = "ochenta";
+        else if (value == 90) num2Text = "noventa";
+        else if (value < 100) num2Text = NumeroALetras(Math.Truncate(value / 10) * 10) + " y " + NumeroALetras(value % 10);
+        else if (value == 100) num2Text = "cien";
+        else if (value < 200) num2Text = "ciento " + NumeroALetras(value - 100);
+        else if ((value == 200) || (value == 300) || (value == 400) || (value == 600) || (value == 800)) num2Text = NumeroALetras(Math.Truncate(value / 100)) + "cientos";
+        else if (value == 500) num2Text = "quinientos";
+        else if (value == 700) num2Text = "setecientos";
+        else if (value == 900) num2Text = "novecientos";
+        else if (value < 1000) num2Text = NumeroALetras(Math.Truncate(value / 100) * 100) + " " + NumeroALetras(value % 100);
+        else if (value == 1000) num2Text = "mil";
+        else if (value < 2000) num2Text = "mil " + NumeroALetras(value % 1000);
+        else if (value < 1000000)
+        {
+            num2Text = NumeroALetras(Math.Truncate(value / 1000)) + " mil";
+            if ((value % 1000) > 0)
+            {
+                num2Text = num2Text + " " + NumeroALetras(value % 1000);
+            }
+        }
+        else if (value == 1000000)
+        {
+            num2Text = "un millon";
+        }
+        else if (value < 2000000)
+        {
+            num2Text = "un millon " + NumeroALetras(value % 1000000);
+        }
+        else if (value < 1000000000000)
+        {
+            num2Text = NumeroALetras(Math.Truncate(value / 1000000)) + " millones ";
+            if ((value - Math.Truncate(value / 1000000) * 1000000) > 0)
+            {
+                num2Text = num2Text + " " + NumeroALetras(value - Math.Truncate(value / 1000000) * 1000000);
+            }
+        }
+        else if (value == 1000000000000) num2Text = "un billon";
+        else if (value < 2000000000000) num2Text = "un billon " + NumeroALetras(value - Math.Truncate(value / 1000000000000) * 1000000000000);
+        else
+        {
+            num2Text = NumeroALetras(Math.Truncate(value / 1000000000000)) + " billones";
+            if ((value - Math.Truncate(value / 1000000000000) * 1000000000000) > 0)
+            {
+                num2Text = num2Text + " " + NumeroALetras(value - Math.Truncate(value / 1000000000000) * 1000000000000);
+            }
+        }
+        
+        return num2Text;
+    }
+}

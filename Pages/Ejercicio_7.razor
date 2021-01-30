@@ -1,0 +1,44 @@
+@page "/Ejercicio-7"
+
+<h1 class="text-center">Ejercicio #7</h1>
+<div class="container">
+    <div class="row">
+        <p>Programa que acepte una calificación (0 a 100), calcule el equivalente literal de la misma y una posible distribución para el siguiente esquema: 40, 30, 30. Ejemplo si digitamos 90 el programa mostrara A => 31, 29 , 30</p>
+    </div><br />
+    <div class="col justify-content-end">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <p><strong>1ra calificación</strong> = @accumulated_1</p>
+            </li>
+            <li class="list-group-item">
+                <p><strong>2da calificación</strong> = @accumulated_2</p>
+            </li>
+            <li class="list-group-item">
+                <p><strong>3ra calificación</strong> = @accumulated_3</p>
+            </li>
+            <li class="list-group-item">
+                <p><strong>Calificación total</strong> = @qualification</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@code {
+   public int accumulated_1 = 0;
+   public int accumulated_2 = 0;
+   public int accumulated_3 = 0;
+   public int qualification = 0;
+
+   protected override void OnInitialized()
+   {
+      Random Calculate = new Random(); 
+
+      while (qualification != 100)
+      {
+         accumulated_1 = Calculate.Next(100);
+         accumulated_2 = Calculate.Next(100);
+         accumulated_3 = Calculate.Next(100);
+         qualification = accumulated_1 + accumulated_2 + accumulated_3;
+      }
+   }
+}

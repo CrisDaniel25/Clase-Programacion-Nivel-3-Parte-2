@@ -1,0 +1,31 @@
+@page "/Ejercicio-2"
+
+<h1 class="text-center">Ejercicio #2</h1>
+<div class="container">
+   <div class="row">
+      <p>Programa que muestre todos los datos de un usuario de random users: https://randomuser.me/api/?results=1.</p>
+   </div>
+   <div class="col justify-content-center">
+        <ul class="list-group">
+            <li class="list-group-item text-center">
+                <p>@users</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@code {
+   string reqUrl => $"https://randomuser.me/api/?results=1";
+   public string users {get; set;}
+
+   protected override async Task OnInitializedAsync()
+   {
+      HttpClient http = new HttpClient();
+      var response = await http.GetAsync(reqUrl);
+
+      if (response.IsSuccessStatusCode)
+      {
+         users = await response.Content.ReadAsStringAsync();
+      }
+   }
+}

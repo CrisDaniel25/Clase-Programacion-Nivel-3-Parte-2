@@ -1,0 +1,66 @@
+@page "/Ejercicio-1"
+
+<h1 class="text-center">Ejercicio #1</h1>
+<div class="container">
+    <div class="row">
+        <p>Programa que acepte una frase u oración, luego muestre la cantidad de vocales, espacios y consonantes que tiene la misma.</p>
+        <p>Para iniciar el conteo, debe tener algo escrito y luego hacer clic en cualquier lugar de la pantalla antes de hacer clic en el botón de conteo.</p>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input class="form-control" placeholder="Introduzca texto aqui" type="text" @bind="sentence" />
+        </div>
+        <div class="col">
+            <button class="btn btn-dark" disabled="@(String.IsNullOrEmpty(sentence) ? true : false)" @onclick="Count_Sentence">Contar</button>
+        </div>
+    </div><br />
+    <div class="col justify-content-end">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <p><strong>Vocales</strong> = @Count_vowels</p>
+            </li>
+            <li class="list-group-item">
+                <p><strong>Consonantes</strong> = @Count_consonants</p>
+            </li>
+            <li class="list-group-item">
+                <p><strong>Espacios</strong> = @Count_spaces</p>
+            </li>
+            <li class="list-group-item">
+                <p><strong>Letras totales en la oración</strong> = @Count_Total_sentence</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@code {
+   public string sentence;
+   public int Count_Total_sentence;
+   public int Count_consonants;
+   public int Count_vowels;
+   public int Count_spaces;
+   public char[] vowels = {'a','e','i','o','u'};
+
+   public void Count_Sentence() 
+   {
+        for (int Count = 0; Count < sentence.Length; Count++)
+        {
+            Count_Total_sentence = sentence.Length;
+            var Array = sentence.ToCharArray(0, sentence.Length);
+
+            if (Array[Count] < 'a' || Array[Count] > 'z')
+            {
+                Count_spaces++;
+            }
+            else if (Array[Count] == vowels[0] || Array[Count] == vowels[1] ||
+                Array[Count] == vowels[2] || Array[Count] == vowels[3] || Array[Count] == vowels[4])
+            {
+                Count_vowels++;
+            }
+            else
+            {
+                Count_consonants++;
+            }
+        } 
+    }
+}
+    

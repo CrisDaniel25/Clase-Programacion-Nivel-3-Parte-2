@@ -1,0 +1,55 @@
+@page "/Ejercicio-6"
+@* @using HtmlAgilityPack
+@using ScrapySharp.Extensions
+@using System.Linq
+@using System.Threading *@
+
+<h1 class="text-center">Ejercicio #6</h1>
+<div class="container">
+    <div class="row">
+        <p>Realiza un programa que acepte una URL, determine la cantidad de párrafos e imágenes que contienen estas.</p>
+    </div>
+    <div class="row">
+         <div class="col">
+            <input class="form-control" type="text" @bind="URL" />
+         </div>
+         <div class="col">
+            <button class="btn btn-dark" @onclick="Search">Verificar URL</button>
+         </div>
+    </div><br />
+    <div class="col justify-content-center">
+        <ul class="list-group">
+            <li class="list-group-item">
+                <p><strong>Imagenes</strong> = @img</p>
+            </li>
+            <li class="list-group-item">
+                <p><strong>Parrafos</strong> = @p</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+@code {
+   public string URL;
+   public int img;
+   public int p;
+
+   public void Search()
+   {
+      @* HtmlWeb Web = new HtmlWeb();
+      HtmlDocument document = Web.Load(URL);
+
+      try
+      {
+         HtmlNode Imange = document.DocumentNode.CssSelect("img").First();
+         img = Imange.InnerLength;
+
+         HtmlNode Paragraph = document.DocumentNode.CssSelect("p").First();
+         p = Paragraph.InnerLength;
+      }
+      catch(Exception ex)
+      {
+
+      } *@
+   }
+}
