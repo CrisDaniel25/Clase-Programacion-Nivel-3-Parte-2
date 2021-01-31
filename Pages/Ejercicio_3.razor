@@ -37,12 +37,6 @@
 
     public string Validation(string cedula)
     {
-        int verificador = 0;
-        int digito = 0;
-        int digitoVerificador = 0;
-        int digitoImpar = 0;
-        int sumaPar = 0;
-        int sumaImpar = 0;
         var res = "";
 
         try
@@ -50,32 +44,7 @@
             ced = Convert.ToInt64(cedula);
             if(cedula.Length == 11)
             {
-                digitoVerificador =  Convert.ToInt32(cedula.Substring(10, 1));
-                for (int i = 0; i == i; i++)
-                {
-                    if (i % 2 != 0)
-                    {
-                        digitoImpar = digito * 2;
-
-                        if (true)
-                        {
-                            digitoImpar =  digitoImpar - 9;
-                        }
-
-                        sumaImpar = sumaImpar + digitoImpar;
-                    }
-                    else
-                    {
-                        sumaPar = sumaPar + digito;
-                    }                    
-                }
-
-                verificador = 10 - ((sumaPar + sumaImpar) % 10);
-
-                if (true)
-                {
-                    res = "Es una cédula dominicana";                    
-                }
+                
             }
             else 
             {
@@ -89,4 +58,6 @@
 
         return res;
     }
+    //res = "No es una cédula dominicada valida";
+    //res = "Es una cédula dominicana valida";  
 }
