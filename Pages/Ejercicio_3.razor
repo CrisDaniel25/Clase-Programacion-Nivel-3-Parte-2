@@ -1,7 +1,5 @@
 @page "/Ejercicio-3"
 @using System;
-@using System.Collections.Generic;
-@using System.Text;
 
 <h1 class="text-center">Ejercicio #3</h1>
 <div class="container">
@@ -27,7 +25,6 @@
 
 @code { 
     public string cedula {get; set;}
-    public long ced {get; set;}
     public string result {get; set;}
 
     public void Verified() 
@@ -37,16 +34,109 @@
 
     public string Validation(string cedula)
     {
+        int[] digitos = new int[11];
+        const int x1 = 1, x2 = 2;
+        int digitoMultiplicado = 0, Result = 0;
+        int comparacion = 0;
         var res = "";
-        @* string[] abc = ""; *@
 
         try
         {            
-            ced = Convert.ToInt64(cedula);
             if(cedula.Length == 11)
             {
-                @* abc = split.cedula('');
-                Console.WriteLine(abc); *@
+                for (int index = 0; index < 11; index++)
+                {
+                    digitos[index] = Convert.ToInt32(cedula.Substring(index, 1));
+                }
+
+                for (int index = 9; index >= 0; index--)
+                {
+                    if (index % 2 == 0)
+                    {
+                        digitoMultiplicado = digitos[index] * x1;
+                        if (digitoMultiplicado < 10)
+                        {
+                            Result = Result + digitoMultiplicado;
+                        }
+                        else
+                        {
+                            for (int index_ = 0; index_ < 2; index_++)
+                            {
+                                var cut = Convert.ToString(digitoMultiplicado);
+                                Result = Result + Convert.ToInt32(cut.Substring(index_, 1));
+                            }
+                        }                       
+                    }
+                    else
+                    {
+                        digitoMultiplicado = digitos[index] * x2;
+                        if (digitoMultiplicado < 10)
+                        {
+                            Result = Result + digitoMultiplicado;
+                        }
+                        else
+                        {
+                            for (int index_ = 0; index_ < 2; index_++)
+                            {
+                                var cut = Convert.ToString(digitoMultiplicado);
+                                Result = Result + Convert.ToInt32(cut.Substring(index_, 1));
+                            }
+                        } 
+                    }
+                }
+
+                if(Result >= 0 && Result <= 9)
+                {
+                    comparacion = 10 - Result;
+                    res = Comparation(digitos[10], comparacion);
+                }
+                else if(Result >= 10 && Result <= 19)
+                {
+                    comparacion = 20 - Result;
+                    res = Comparation(digitos[10], comparacion);
+                }
+                else if(Result >= 20 && Result <= 29)
+                {
+                    comparacion = 30 - Result;
+                    res = Comparation(digitos[10], comparacion);
+                }
+                else if(Result >= 30 && Result <= 39)
+                {
+                    comparacion = 40 - Result;
+                    res = Comparation(digitos[10], comparacion);
+                }
+                else if(Result >= 40 && Result <= 49)
+                {
+                    comparacion = 50 - Result;
+                    Console.WriteLine(digitos[10] + " " + Result + " " + comparacion);
+                    res = Comparation(digitos[10], comparacion);
+                }
+                else if(Result >= 50 && Result <= 59)
+                {
+                    comparacion = 60 - Result;
+                    res = Comparation(digitos[10], comparacion);
+                }
+                else if(Result >= 60 && Result <= 69)
+                {
+                    comparacion = 70 - Result;
+                    res = Comparation(digitos[10], comparacion);
+                }
+                else if(Result >= 70 && Result <= 79)
+                {
+                    comparacion = 80 - Result;
+                    res = Comparation(digitos[10], comparacion);
+                }
+                else if(Result >= 80 && Result <= 89)
+                {
+                    comparacion = 90 - Result;
+                    res = Comparation(digitos[10], comparacion);
+                }
+                else if(Result >= 90 && Result <= 99)
+                {
+                    comparacion = 100 - Result;
+                    res = Comparation(digitos[10], comparacion);
+                }
+                
             }
             else 
             {
@@ -60,6 +150,19 @@
 
         return res;
     }
-    //res = "No es una cédula dominicada valida";
-    //res = "Es una cédula dominicana valida";  
+
+    public string Comparation(int digitoVerificador, int digitoComparativo)
+    {
+        var res = "";
+
+        if(digitoVerificador == digitoComparativo)
+        {
+            res = "Es una cédula dominicana valida";
+        }
+        else
+        {
+            res = "No es una cédula dominicada valida";
+        }
+        return res;
+    }
 }

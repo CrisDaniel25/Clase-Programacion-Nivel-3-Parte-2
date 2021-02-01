@@ -1,8 +1,8 @@
 @page "/Ejercicio-6"
-@* @using HtmlAgilityPack
+@using HtmlAgilityPack
 @using ScrapySharp.Extensions
 @using System.Linq
-@using System.Threading *@
+@using System.Threading
 
 <h1 class="text-center">Ejercicio #6</h1>
 <div class="container">
@@ -25,18 +25,23 @@
             <li class="list-group-item">
                 <p><strong>Parrafos</strong> = @p</p>
             </li>
+            <li class="list-group-item text-center">
+                <p><strong>@Exception</strong></p>
+            </li>
         </ul>
     </div>
 </div>
 
 @code {
    public string URL;
+   public string Exception;
    public int img;
    public int p;
 
    public void Search()
    {
-      @* HtmlWeb Web = new HtmlWeb();
+
+       HtmlWeb Web = new HtmlWeb();
       HtmlDocument document = Web.Load(URL);
 
       try
@@ -47,9 +52,9 @@
          HtmlNode Paragraph = document.DocumentNode.CssSelect("p").First();
          p = Paragraph.InnerLength;
       }
-      catch(Exception ex)
+      catch(System.Exception) 
       {
-
-      } *@
-   }
+          Exception = "Error... Puede que la pagina deseada no exista";
+      }
+    }
 }
