@@ -111,39 +111,6 @@
         }
       },
       {
-        "HashCode": 1232405557,
-        "Kind": "Components.Component",
-        "Name": "Tarea_2.Pages.Ejercicio_6",
-        "AssemblyName": "Tarea_2",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Ejercicio_6"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tarea_2.Pages.Ejercicio_6"
-        }
-      },
-      {
-        "HashCode": -956637868,
-        "Kind": "Components.Component",
-        "Name": "Tarea_2.Pages.Ejercicio_6",
-        "AssemblyName": "Tarea_2",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Tarea_2.Pages.Ejercicio_6"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tarea_2.Pages.Ejercicio_6",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": -493283398,
         "Kind": "Components.Component",
         "Name": "Tarea_2.Pages.Index",
@@ -173,39 +140,6 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Tarea_2.Pages.Index",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
-        "HashCode": 1889695214,
-        "Kind": "Components.Component",
-        "Name": "Tarea_2.Pages.Ejercicio_1",
-        "AssemblyName": "Tarea_2",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Ejercicio_1"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tarea_2.Pages.Ejercicio_1"
-        }
-      },
-      {
-        "HashCode": 45050244,
-        "Kind": "Components.Component",
-        "Name": "Tarea_2.Pages.Ejercicio_1",
-        "AssemblyName": "Tarea_2",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Tarea_2.Pages.Ejercicio_1"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "Tarea_2.Pages.Ejercicio_1",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -305,6 +239,72 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "Tarea_2.Pages.Ejercicio_2",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1889695214,
+        "Kind": "Components.Component",
+        "Name": "Tarea_2.Pages.Ejercicio_1",
+        "AssemblyName": "Tarea_2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Ejercicio_1"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tarea_2.Pages.Ejercicio_1"
+        }
+      },
+      {
+        "HashCode": 45050244,
+        "Kind": "Components.Component",
+        "Name": "Tarea_2.Pages.Ejercicio_1",
+        "AssemblyName": "Tarea_2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Tarea_2.Pages.Ejercicio_1"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tarea_2.Pages.Ejercicio_1",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1232405557,
+        "Kind": "Components.Component",
+        "Name": "Tarea_2.Pages.Ejercicio_6",
+        "AssemblyName": "Tarea_2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Ejercicio_6"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tarea_2.Pages.Ejercicio_6"
+        }
+      },
+      {
+        "HashCode": -956637868,
+        "Kind": "Components.Component",
+        "Name": "Tarea_2.Pages.Ejercicio_6",
+        "AssemblyName": "Tarea_2",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Tarea_2.Pages.Ejercicio_6"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "Tarea_2.Pages.Ejercicio_6",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
